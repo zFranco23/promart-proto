@@ -4,6 +4,7 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
+        <title>B2B protos</title>
         <link
           rel="preload"
           crossOrigin="anonymous"
