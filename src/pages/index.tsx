@@ -1,117 +1,67 @@
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
+import { Button } from '@/components/Button/Button'
+import { WordChanger } from '@/components/WordChanger/WordChanger'
+
 
 const inter = Inter({ subsets: ['latin'] })
+
+export const ArrowSvg = (props: React.SVGProps<SVGSVGElement>) => (
+  <svg
+    viewBox="0 0 14 14"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
+    <path
+      d="M7.65609 11.2583L11.5061 7.4083C11.5644 7.34997 11.6058 7.28677 11.6303 7.21872C11.6544 7.15066 11.6665 7.07774 11.6665 6.99997C11.6665 6.92219 11.6544 6.84927 11.6303 6.78122C11.6058 6.71316 11.5644 6.64997 11.5061 6.59163L7.65609 2.74163C7.54914 2.63469 7.41556 2.57869 7.25534 2.57363C7.09473 2.56897 6.95609 2.62497 6.83942 2.74163C6.72275 2.84858 6.66189 2.98216 6.65684 3.14238C6.65217 3.30299 6.70817 3.44163 6.82484 3.5583L9.68317 6.41663H3.16442C2.99914 6.41663 2.8605 6.47244 2.7485 6.58405C2.63689 6.69605 2.58109 6.83469 2.58109 6.99997C2.58109 7.16524 2.63689 7.30369 2.7485 7.4153C2.8605 7.5273 2.99914 7.5833 3.16442 7.5833H9.68317L6.82484 10.4416C6.71789 10.5486 6.66189 10.6847 6.65684 10.85C6.65217 11.0152 6.70817 11.1514 6.82484 11.2583C6.93178 11.375 7.06789 11.4333 7.23317 11.4333C7.39845 11.4333 7.53942 11.375 7.65609 11.2583Z"
+      fill="currentColor"
+    />
+  </svg>
+)
+
 
 export default function Home() {
   return (
     <main
-      className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className}`}
+      
+      className={`${inter.className}`}
     >
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/pages/index.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+      <header className='bg-black flex justify-between items-center w-full p-4 !md:p-12 py-4'>
+      <div className="w-32 md:w-48 h-auto">
+          <Image
+            src="/img/logo-ve-orange.png"
+            alt="logo-venta-empresa"
+            width={180}
+            height={40}
+            priority
+          />
         </div>
-      </div>
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700/10 after:dark:from-sky-900 after:dark:via-[#0141ff]/40 before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Discover and deploy boilerplate example Next.js&nbsp;projects.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
+        <Button variant='primary' className='bg-orange rounded-0 !p-2 flex items-center'>
+            <p>Ingresa o regístrate</p>
+            <ArrowSvg className='w-4 h-4 ml-1'/>
+        </Button>
+      </header>
+      {/* <div>
+        <WordChanger />
+      </div> */}
+      <div className='h-[36rem]'>
+        <div className='relative w-full h-full max-h-full max-w-full'>
+          <div className='absolute top-0 left-0 w-full h-full z-10'>
+              <div className='w-full h-full flex items-center justify-center flex-col gap-6'>
+                <WordChanger />
+                <p className='text-white font-bold text-center'>Cotiza online al mejor precio y asegura el éxito de tu negocio</p>
+              </div>
+          </div>
+          <video 
+            className='absolute top-0 left-0 object-cover object-center w-full h-full brightness-50' 
+            src='/assets/video-bg.mp4' 
+            autoPlay 
+            muted 
+            loop 
+          />
+        </div>
       </div>
     </main>
   )
